@@ -1,0 +1,20 @@
+
+
+#You have to create a TimedRotatingFileHandler:
+import logging
+from logging.handlers import TimedRotatingFileHandler
+
+
+
+log_level = int(log_level)
+
+logger = logging.getLogger('simple')
+logger.setLevel(log_level)
+
+
+logname = "my_app.log"
+handler = TimedRotatingFileHandler(logname, when="midnight", interval=1)
+handler.suffix = "%Y%m%d"
+logger.addHandler(handler)
+# This piece of code will create a my_app.log but the log will be moved to a new log file named my_app.log.20170623 when the current day ends at midnight.
+
