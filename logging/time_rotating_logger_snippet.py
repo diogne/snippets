@@ -23,4 +23,5 @@ logger.addHandler(handler)
         test code : 
 '''
 
-logger.error("tout va bien")
+if __name__ == '__main__':
+    logger.error("tout va bien")
